@@ -1,27 +1,17 @@
 pipeline {
     agent any
-    parameters {
-         choice(name: 'CHOICES', choices: ['mvn package', 'mvn test', 'mvn validate'], description: 'this is options') 
-         }
-    triggers { 
-        pollSCM('* * * * *')
-    }
     stages {
-        stage('clone') {
+        stage('git clone') {
+          steps {
+            git branch: 'main',url: 'https://github.com/kasagonirithish/spring-petclinic.git'
+          }
+        }
+        stage('validate') {
             steps {
-                git url:'https://github.com/muthyalasaikiran/spring-petclinic.git',
-                    branch: 'main'
+                 sh 'mvn --version'
+                 sh 'mvn validate'
             }
         }
-        stage('build') {
-            steps {  
-                echo "Choice: ${params.CHOICE}" 
-                sh 'touch hello'
-            
-
-            }
     }
-    
-    }
-
 }
+    
