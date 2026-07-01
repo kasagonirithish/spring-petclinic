@@ -5,7 +5,7 @@ pipeline {
         jdk 'jdk-17'
         maven mvn-'3.9.12'   
          }
-    parameters {choice(name: 'CHOICES', choices: ['mvn validate','mvn package','mvn clean','mvn test','deploy'])
+    parameters {choice(name: 'CHOICES', choices: ['mvn validate','mvn package','mvn clean','mvn test'])
     }
     stages {
         stage('git clone') {
@@ -16,11 +16,8 @@ pipeline {
         stage('maven build') {
             steps {
                  echo "choice: ${params.CHOICES}"
-        stage('deploy') {
-            steps {
-                sh ''
-            }
-        }         
+            
+                
             }
         }
     }
