@@ -9,7 +9,7 @@ pipeline {
             git branch: 'main',url: 'https://github.com/kasagonirithish/spring-petclinic.git'
           }
         }
-        stage('validate') {
+        stage('maven build') {
             steps {
                  echo "choice: ${params.CHOICES}"
             }
