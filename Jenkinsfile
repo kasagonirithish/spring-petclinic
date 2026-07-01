@@ -11,8 +11,7 @@ pipeline {
         }
         stage('validate') {
             steps {
-                 sh 'mvn --version'
-                 sh 'mvn validate'
+                 echo "choice: ${params.CHOICES}"
             }
         }
     }
