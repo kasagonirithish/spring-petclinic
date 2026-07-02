@@ -4,7 +4,9 @@ pipeline {
    tools {
       jdk 'jdk-17'
       maven 'mvn-3.9.12'
+   }
   parameters {choice(name:'CHOICES',choices:['mvn package','mvn clean','mvn test','mvn validate'])
+  }
   stages {
         stage ('git clone') {
             steps {
@@ -19,6 +21,4 @@ pipeline {
             }
         }
     }
-    }
-   } 
 }
