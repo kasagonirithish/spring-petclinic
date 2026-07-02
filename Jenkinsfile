@@ -19,5 +19,5 @@ parameters {choices(name:'CHOICES',choices:['mvn validate','mvn package','mvn cl
                 echo "choice: ${CHOICES}"
          }
      }
-
+    }
   }
