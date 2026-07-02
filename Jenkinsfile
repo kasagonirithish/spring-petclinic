@@ -1,11 +1,11 @@
 pipeline {
     agent any 
-triggers { pollSCM:('* * * * *')}
+triggers { pollSCM('* * * * *')}
 tools {
      jdk 'jdk-17'
      maven 'mvn-3.9.12' 
   }
-parameters {choices(name:'CHOICES',choices:['mvn validate','mvn package','mvn clean','mvn test'])
+parameters {choice(name:'CHOICES',choices:['mvn validate','mvn package','mvn clean','mvn test'])
   }
     stages {
          stage ('git clone') {
