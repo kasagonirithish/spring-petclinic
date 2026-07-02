@@ -12,13 +12,13 @@ pipeline {
             steps {
                 git branch: 'main'
                     url: 'https://github.com/kasagonirithish/spring-petclinic.git'
+            }
+        }
         stage ('build') {
             steps {
                 echo "choice: ${CHOICES}"
             }
         }            
-
-            }
-        }
+        
     }
 }
