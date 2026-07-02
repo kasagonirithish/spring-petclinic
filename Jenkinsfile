@@ -10,7 +10,7 @@ pipeline {
   stages {
         stage ('git clone') {
             steps {
-                git branch: 'main'
+                git branch: 'main',
                     url: 'https://github.com/kasagonirithish/spring-petclinic.git'
             }
         }
