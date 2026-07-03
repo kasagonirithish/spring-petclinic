@@ -7,8 +7,8 @@ tools {
  }
 parameters {
    choice(
-   name:'CHOICES',
-   choices['mvn package','mvn validate','mvn clean','mvn test'])
+      name:'CHOICES',
+      choices['mvn package','mvn validate','mvn clean','mvn test'])
    }
 stages {
     stage ('git clone') {
