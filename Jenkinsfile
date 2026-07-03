@@ -5,7 +5,7 @@ tools {
     maven 'mvn-3.9.12'
  }
 parameters {
-   choices(
+   choice(
    name:'CHOICES',
    choices['mvn package','mvn validate','mvn clean','mvn test'])
    }
