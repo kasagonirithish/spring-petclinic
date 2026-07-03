@@ -1,4 +1,5 @@
 pipeline {
+    agent any
 triggers { pollSCM('* * * * *')}
 tools {
     jdk 'jdk-17'
@@ -18,7 +19,7 @@ stages {
         }
     stage ('mvn build') {
     steps {
-          echo {"choices $CHOICES"}
+          echo "choices ${CHOICES}"
          }
        }
     }
