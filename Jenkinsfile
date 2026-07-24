@@ -2,7 +2,7 @@ pipeline {
     agent {
       label 'spc-node'
     }
-triggers { pollSCM('0 0 * * *')}
+triggers { pollSCM('* * * * *')}
 tools {
     jdk 'jdk-17'
     maven 'mvn-3.9.12'
