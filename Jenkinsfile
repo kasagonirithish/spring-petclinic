@@ -21,6 +21,6 @@ stages {
          steps {
             sh "${params.GOALS}"
          }
-    }
-}  
+    } 
 }
+} 
