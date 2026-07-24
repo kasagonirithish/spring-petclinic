@@ -22,5 +22,10 @@ stages {
             sh "${params.GOALS}"
          }
     } 
+    stage('deploy') {
+         steps {
+            sh ' java -jar /home/ubuntu/remote/workspace/spc_pipeline/target/spring-petclinic-2.7.3.jar'
+         }
+    }
 }
 } 
